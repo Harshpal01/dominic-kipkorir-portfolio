@@ -48,11 +48,13 @@ function Hero() {
 function About() {
   return (
     <Section id="about">
-      <h2 className="text-2xl md:text-3xl font-bold text-white text-center">About Me</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-sky-400 text-center">About Me</h2>
       <p className="mt-4 text-slate-300 max-w-3xl mx-auto text-center">
-        Passionate Software Engineer with hands-on experience in building full-stack web applications,
-        data-driven systems, and interactive user interfaces. Graduated from the Moringa School Software
-        Engineering Bootcamp. I’m driven by problem‑solving, clean code, and impactful digital products.
+        I’m a motivated junior software developer with a strong foundation in software engineering and hands-on
+        experience building full-stack applications. A recent Software Engineering graduate from Moringa School,
+        skilled in React, JavaScript, Python, Flask, SQL, and API integration. I’m passionate about developing
+        scalable, user-centered solutions and thrive in collaborative, fast-paced environments that promote
+        innovation and continuous learning.
       </p>
       <div className="mt-8 grid grid-cols-3 max-w-xl gap-6 mx-auto">
         <div className="group rounded-lg border border-sky-500/30 bg-slate-800/40 p-4 text-center transition-colors hover:border-sky-400 hover:bg-slate-800/60">
@@ -85,7 +87,7 @@ function Skills() {
   ]
   return (
     <Section id="skills">
-      <h2 className="text-2xl md:text-3xl font-bold text-white text-center">Tech Stack</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-sky-400 text-center">Tech Stack</h2>
       <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-4xl mx-auto">
         {skills.map((s) => (
           <div key={s} className="rounded-md border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200">
@@ -118,7 +120,7 @@ function Projects() {
   ]
   return (
     <Section id="projects">
-      <h2 className="text-2xl md:text-3xl font-bold text-white text-center">My Projects</h2>
+      <h2 className="text-2xl md:text-3xl font-bold text-sky-400 text-center">My Projects</h2>
       <div className="mt-6 grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {items.map((p) => (
           <div key={p.title} className="rounded-2xl border border-sky-500/30 bg-slate-800/50 overflow-hidden hover:shadow-lg hover:shadow-sky-500/10 transition">
@@ -303,9 +305,18 @@ export default function App() {
         <Contact />
       </main>
       <FloatingNav />
-      <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto max-w-6xl px-4 text-sm text-slate-400 text-center">
-          © {new Date().getFullYear()} Dominic Kipkorir. All rights reserved.
+      <footer className="bg-slate-800/80 backdrop-blur border-t border-sky-500/20 py-10">
+        <div className="mx-auto max-w-6xl px-4">
+          <h3 className="text-base font-semibold text-sky-400">Quick links</h3>
+          <nav className="mt-4 flex flex-col items-start gap-2 text-sm">
+            <a href="#services" className="text-slate-300 hover:text-white">Services</a>
+            <a href="#home" className="text-slate-300 hover:text-white">Home</a>
+            <a href="#contact" className="text-slate-300 hover:text-white">Contact Me</a>
+            <a href="#about" className="text-slate-300 hover:text-white">About Me</a>
+          </nav>
+          <div className="mt-6 text-sm text-slate-400">
+            © {new Date().getFullYear()} Dominic Kipkorir. All rights reserved.
+          </div>
         </div>
       </footer>
     </div>
