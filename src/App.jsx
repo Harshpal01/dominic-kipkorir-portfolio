@@ -11,7 +11,7 @@ function Section({ id, className = '', children }) {
 function Hero() {
   return (
     <Section id="home" className="pt-16">
-      <div className="grid md:grid-cols-2 items-center gap-10">
+      <div className="grid md:grid-cols-2 items-center gap-6 md:gap-8">
         <div className="text-center md:text-left">
           <p className="text-sky-400 font-semibold">Software Engineer</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-extrabold tracking-tight text-white">
@@ -302,11 +302,84 @@ export default function App() {
         <Services />
         <Contact />
       </main>
+      <FloatingNav />
       <footer className="border-t border-white/10 py-8">
-        <div className="mx-auto max-w-6xl px-4 text-sm text-slate-400">
+        <div className="mx-auto max-w-6xl px-4 text-sm text-slate-400 text-center">
           © {new Date().getFullYear()} Dominic Kipkorir. All rights reserved.
         </div>
       </footer>
     </div>
+  )
+}
+
+function FloatingNav() {
+  const items = [
+    {
+      href: '#home',
+      label: 'Home',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <path d="M3 10.5 12 3l9 7.5" />
+          <path d="M5 10v9a1 1 0 0 0 1 1h4v-6h4v6h4a1 1 0 0 0 1-1v-9" />
+        </svg>
+      ),
+    },
+    {
+      href: '#about',
+      label: 'About',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <circle cx="12" cy="8" r="3" />
+          <path d="M6 20c0-3.314 2.686-6 6-6s6 2.686 6 6" />
+        </svg>
+      ),
+    },
+    {
+      href: '#projects',
+      label: 'Projects',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <rect x="3" y="4" width="18" height="14" rx="2" />
+          <path d="M3 9h18" />
+        </svg>
+      ),
+    },
+    {
+      href: '#services',
+      label: 'Services',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <path d="M12 2v4" />
+          <path d="M12 18v4" />
+          <rect x="6" y="6" width="12" height="12" rx="2" />
+        </svg>
+      ),
+    },
+    {
+      href: '#contact',
+      label: 'Contact',
+      icon: (
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" className="h-5 w-5">
+          <path d="M4 6h16v12H4z" />
+          <path d="M22 6l-10 7L2 6" />
+        </svg>
+      ),
+    },
+  ]
+  return (
+    <nav className="fixed bottom-6 inset-x-0 z-50 flex justify-center">
+      <div className="flex items-center gap-2 rounded-full border border-white/10 bg-slate-800/70 backdrop-blur px-3 py-2 shadow-lg shadow-black/20">
+        {items.map((it) => (
+          <a
+            key={it.href}
+            href={it.href}
+            aria-label={it.label}
+            className="group inline-flex h-10 w-10 items-center justify-center rounded-full text-slate-300 hover:text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-sky-500"
+          >
+            {it.icon}
+          </a>
+        ))}
+      </div>
+    </nav>
   )
 }
