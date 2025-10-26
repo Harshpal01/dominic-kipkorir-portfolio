@@ -1,1 +1,1 @@
-https://dominickipkorir.netlify.app/
+https://dominic-kipkorir.netlify.app/
