@@ -64,7 +64,7 @@ function About() {
           <div className="text-sm text-slate-400">Years of Learning & Practice</div>
         </div>
         <div className="rounded-lg border border-white/10 p-4 text-center">
-          <div className="text-3xl font-bold text-white">5+</div>
+          <div className="text-3xl font-bold text-white">3+</div>
           <div className="text-sm text-slate-400">Collaborative Team Projects</div>
         </div>
       </div>
