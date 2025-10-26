@@ -55,17 +55,17 @@ function About() {
         Engineering Bootcamp. I’m driven by problem‑solving, clean code, and impactful digital products.
       </p>
       <div className="mt-8 grid grid-cols-3 max-w-xl gap-6 mx-auto">
-        <div className="rounded-lg border border-white/10 p-4 text-center">
-          <div className="text-3xl font-bold text-white">10+</div>
-          <div className="text-sm text-slate-400">Projects Completed</div>
+        <div className="group rounded-lg border border-sky-500/30 bg-slate-800/40 p-4 text-center transition-colors hover:border-sky-400 hover:bg-slate-800/60">
+          <div className="text-3xl font-bold text-sky-400 transition-colors group-hover:text-sky-300">10+</div>
+          <div className="text-sm text-slate-400 transition-colors group-hover:text-slate-300">Projects Completed</div>
         </div>
-        <div className="rounded-lg border border-white/10 p-4 text-center">
-          <div className="text-3xl font-bold text-white">3+</div>
-          <div className="text-sm text-slate-400">Years of Learning & Practice</div>
+        <div className="group rounded-lg border border-sky-500/30 bg-slate-800/40 p-4 text-center transition-colors hover:border-sky-400 hover:bg-slate-800/60">
+          <div className="text-3xl font-bold text-sky-400 transition-colors group-hover:text-sky-300">3+</div>
+          <div className="text-sm text-slate-400 transition-colors group-hover:text-slate-300">Years of Learning & Practice</div>
         </div>
-        <div className="rounded-lg border border-white/10 p-4 text-center">
-          <div className="text-3xl font-bold text-white">3+</div>
-          <div className="text-sm text-slate-400">Collaborative Team Projects</div>
+        <div className="group rounded-lg border border-sky-500/30 bg-slate-800/40 p-4 text-center transition-colors hover:border-sky-400 hover:bg-slate-800/60">
+          <div className="text-3xl font-bold text-sky-400 transition-colors group-hover:text-sky-300">3+</div>
+          <div className="text-sm text-slate-400 transition-colors group-hover:text-slate-300">Collaborative Team Projects</div>
         </div>
       </div>
     </Section>
