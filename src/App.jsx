@@ -1,5 +1,4 @@
 import { useState } from 'react'
-// Navbar intentionally removed to match reference layout with centered content and no top header.
 
 function Section({ id, className = '', children }) {
   return (
