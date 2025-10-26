@@ -102,6 +102,15 @@ function Skills() {
 function Projects() {
   const items = [
     {
+      title: 'Automated E-commerce System (In Progress)',
+      status: 'In Progress',
+      desc:
+        'Custom automatic e-commerce platform with crawler, multi-endpoint APIs, PostgreSQL + Elasticsearch, Stripe, email automation, and ML components.',
+      tech: 'FastAPI, Scrapy + Playwright, PostgreSQL, Elasticsearch, Redis, Stripe, SendGrid, Docker',
+      link: 'https://github.com/Harshpal01/automated-ecommerce-platform',
+      img: '/vite.svg',
+    },
+    {
       title: 'Skill Swap Platform',
       desc:
         'A peer-to-peer learning platform enabling users to teach and learn various skills from each other. Built for seamless discovery, scheduling, and authentication.',
@@ -124,22 +133,33 @@ function Projects() {
       <div className="mt-6 grid sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {items.map((p) => (
           <div key={p.title} className="rounded-2xl border border-sky-500/30 bg-slate-800/50 overflow-hidden hover:shadow-lg hover:shadow-sky-500/10 transition">
-            <div className="aspect-[16/9] bg-slate-900/40">
+            <div className="relative aspect-[16/9] bg-slate-900/40">
               <img src={p.img} alt={p.title} className="h-full w-full object-cover" loading="lazy" />
+              {p.status && (
+                <span className="absolute top-2 left-2 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 px-2 py-1 text-[10px] font-semibold uppercase tracking-wide">
+                  {p.status}
+                </span>
+              )}
             </div>
             <div className="p-6">
               <h3 className="text-lg font-semibold text-white">{p.title}</h3>
               <p className="mt-2 text-sm text-slate-300">{p.desc}</p>
               {p.tech && <p className="mt-2 text-xs text-slate-400">Technologies: {p.tech}</p>}
               <div className="mt-4 flex gap-3">
-                <a
-                  className="inline-flex items-center rounded-md bg-sky-500 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-400"
-                  href={p.link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  GitHub
-                </a>
+                {p.link ? (
+                  <a
+                    className="inline-flex items-center rounded-md bg-sky-500 px-3 py-2 text-xs font-semibold text-white hover:bg-sky-400"
+                    href={p.link}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    GitHub
+                  </a>
+                ) : (
+                  <span className="inline-flex items-center rounded-md border border-white/10 px-3 py-2 text-xs font-semibold text-slate-300">
+                    Repo coming soon
+                  </span>
+                )}
               </div>
             </div>
           </div>
