@@ -13,8 +13,20 @@ function Section({ id, className = '', children }) {
 function Hero() {
   return (
     <Section id="home" className="pt-16">
-      <div className="grid md:grid-cols-2 items-center gap-6 md:gap-8">
-        <div className="text-center md:text-left">
+      <div className="grid md:grid-cols-2 items-center gap-4 md:gap-6">
+        <div className="flex justify-center md:justify-start order-2 md:order-1">
+          <div className="relative h-64 w-64 md:h-80 md:w-80">
+            <div className="absolute -inset-2 bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 rounded-full opacity-75 blur-lg animate-pulse" />
+            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-500/30 to-cyan-500/20 ring-2 ring-sky-400/50" />
+            <img
+              src="/profile.jpeg"
+              alt="Dominic Kipkorir"
+              className="relative z-10 h-full w-full rounded-full object-cover shadow-2xl shadow-sky-500/50"
+              loading="eager"
+            />
+          </div>
+        </div>
+        <div className="text-center md:text-left order-1 md:order-2">
           <p className="text-sky-400 font-semibold">Software Engineer</p>
           <h1 className="mt-3 text-4xl md:text-6xl font-extrabold tracking-tight text-white">
             Dominic Kipkorir
@@ -29,18 +41,6 @@ function Hero() {
             <a href="/DominicKipkorir_Resume.pdf" className="inline-flex items-center rounded-md border border-white/20 px-5 py-2.5 text-sm font-semibold text-slate-200 hover:bg-white/5">
               Download Resume
             </a>
-          </div>
-        </div>
-        <div className="flex justify-center md:justify-end">
-          <div className="relative h-64 w-64 md:h-80 md:w-80">
-            <div className="absolute -inset-2 bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 rounded-full opacity-75 blur-lg animate-pulse" />
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-sky-500/30 to-cyan-500/20 ring-2 ring-sky-400/50" />
-            <img
-              src="/profile.jpeg"
-              alt="Dominic Kipkorir"
-              className="relative z-10 h-full w-full rounded-full object-cover shadow-2xl shadow-sky-500/50"
-              loading="eager"
-            />
           </div>
         </div>
       </div>
