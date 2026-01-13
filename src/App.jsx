@@ -252,7 +252,7 @@ function Projects() {
       title: 'ENA Consult Ltd',
       desc:
         'Professional consulting company website with modern design, service offerings showcase, team profiles, and client testimonials. Built for corporate presence and client engagement.',
-      tech: 'React, Node.js, JavaScript, HTML, CSS, MongoDB',
+      tech: 'React, Node.js, JavaScript, TailwindCSS, HTML, CSS, PostgreSQL',
       link: 'https://github.com/Harshpal01/ENA-Consult-Ltd',
       img: '/enaconsulting.png',
     },
@@ -260,7 +260,7 @@ function Projects() {
       title: 'Math Tutor Booking',
       desc:
         'Online tutoring platform enabling students to book math tutoring sessions with qualified instructors. Features scheduling, payment integration, and student-tutor matching system.',
-      tech: 'React, Node.js, JavaScript, MongoDB, Stripe, HTML, CSS',
+      tech: 'React, Node.js, JavaScript, Firebase, Stripe, HTML, CSS',
       link: 'https://github.com/Harshpal01/Math-tutor-booking',
       img: '/math.png',
     },
