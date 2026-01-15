@@ -13,7 +13,7 @@ function Section({ id, className = '', children }) {
 function Hero() {
   return (
     <Section id="home" className="pt-16">
-      <div className="grid md:grid-cols-2 items-center gap-4 md:gap-6">
+      <div className="grid md:grid-cols-2 items-start gap-4 md:gap-6">
         <div className="flex justify-center md:justify-start order-2 md:order-1">
           <div className="relative h-64 w-64 md:h-80 md:w-80">
             <div className="absolute -inset-2 bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 rounded-full opacity-75 blur-lg animate-pulse" />
