@@ -408,12 +408,9 @@ function Contact() {
           className="space-y-4"
           action="https://formspree.io/f/xldodreo"
           method="POST"
-          target="_blank"
           onSubmit={(e) => {
-            // allow default submit; just show local success & reset
             setError(false)
             setSent(true)
-            e.currentTarget.reset()
             setTimeout(() => setSent(false), 5000)
           }}
         >
