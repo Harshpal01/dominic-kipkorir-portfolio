@@ -371,21 +371,17 @@ function Contact() {
     setLoading(true)
 
     const formData = new FormData(e.currentTarget)
-    const data = {
-      name: formData.get('name'),
-      email: formData.get('email'),
-      message: formData.get('message')
-    }
 
     try {
-      const response = await fetch('/.netlify/functions/send-email', {
+      const response = await fetch('https://formspree.io/f/xyzgoevr', {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       })
 
-      const result = await response.json()
-
-      if (response.ok && result.success) {
+      if (response.ok) {
         setSent(true)
         e.currentTarget.reset()
         setTimeout(() => setSent(false), 5000)
