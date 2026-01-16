@@ -363,6 +363,45 @@ function ContactCard({ icon, title, subtitle, linkHref, linkText }) {
 function Contact() {
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    setError(false)
+    setLoading(true)
+
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message')
+    }
+
+    try {
+      const response = await fetch('/.netlify/functions/send-email', {
+        method: 'POST',
+        body: JSON.stringify(data)
+      })
+
+      const result = await response.json()
+
+      if (response.ok && result.success) {
+        setSent(true)
+        e.currentTarget.reset()
+        setTimeout(() => setSent(false), 5000)
+      } else {
+        setError(true)
+        setTimeout(() => setError(false), 5000)
+      }
+    } catch (err) {
+      console.error('Error:', err)
+      setError(true)
+      setTimeout(() => setError(false), 5000)
+    } finally {
+      setLoading(false)
+    }
+  }
+
   return (
     <Section id="contact">
       <h2 className="text-2xl md:text-3xl font-bold text-white text-center">Contact Me</h2>
@@ -406,15 +445,8 @@ function Contact() {
 
         <form
           className="space-y-4"
-          action="https://formspree.io/f/xldodreo"
-          method="POST"
-          onSubmit={(e) => {
-            setError(false)
-            setSent(true)
-            setTimeout(() => setSent(false), 5000)
-          }}
+          onSubmit={handleSubmit}
         >
-          <input type="hidden" name="_subject" value="Portfolio contact" />
           <input
             type="text"
             name="name"
@@ -438,9 +470,10 @@ function Contact() {
           />
           <button
             type="submit"
-            className="inline-flex items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-400"
+            disabled={loading}
+            className="inline-flex items-center rounded-xl bg-sky-500 px-5 py-3 text-sm font-semibold text-white hover:bg-sky-400 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            Send Message
+            {loading ? 'Sending...' : 'Send Message'}
           </button>
           {sent && (
             <div className="text-sm text-emerald-400" role="status" aria-live="polite">
