@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNode, FaPython, FaGit, FaDocker, FaCube, FaCoffee, FaLink, FaDatabase } from 'react-icons/fa'
 import { SiTailwindcss, SiNextdotjs, SiDjango, SiFlask, SiMongodb, SiPostgresql, SiMysql, SiElasticsearch, SiExpress, SiWebpack, SiVite, SiNpm, SiC, SiOpengl } from 'react-icons/si'
 
@@ -364,16 +364,18 @@ function Contact() {
   const [sent, setSent] = useState(false)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(false)
+  const formRef = useRef(null)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setError(false)
+    setSent(false)
     setLoading(true)
 
     const formData = new FormData(e.currentTarget)
 
     try {
-      const response = await fetch('https://formspree.io/f/xyzgoevr', {
+      const response = await fetch('https://formspree.io/f/xldodreo', {
         method: 'POST',
         body: formData,
         headers: {
@@ -383,7 +385,9 @@ function Contact() {
 
       if (response.ok) {
         setSent(true)
-        e.currentTarget.reset()
+        if (formRef.current) {
+          formRef.current.reset()
+        }
         setTimeout(() => setSent(false), 5000)
       } else {
         setError(true)
@@ -440,6 +444,7 @@ function Contact() {
         </div>
 
         <form
+          ref={formRef}
           className="space-y-4"
           onSubmit={handleSubmit}
         >
